@@ -63,3 +63,8 @@ Este projeto implementa um sistema de e-commerce simples para demonstrar diverso
 javac *.java
 java Main
 ```
+
+---
+
+## 👥 Autores
+Luis Gustavo Theml Novais e Marciana Pereira
