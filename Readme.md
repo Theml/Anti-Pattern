@@ -16,7 +16,9 @@
 9. VIOLATION OF SRP: Uma classe com múltiplas responsabilidades
 10. HARD TO TEST: Código acoplado e sem injeção de dependências
 
-### COMO MELHORAR:
+---
+
+### Como Melhorar o Projeto:
 - Separar responsabilidades em classes específicas
 - Criar camadas (Controller, Service, Repository)  
 - Implementar interfaces para abstrair dependências
