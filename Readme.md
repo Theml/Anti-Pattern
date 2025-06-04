@@ -1,27 +1,65 @@
-# EXEMPLO DE ANTI-PADRÕES DE PROJETO
-## Este código demonstra vários problemas comuns de design
+# Demonstração de Anti-Padrões em Java
+> Projeto acadêmico para demonstrar problemas comuns de design de software
 
----
+## 📋 Sobre o Projeto
+Este projeto implementa um sistema de e-commerce simples para demonstrar diversos anti-padrões de programação - práticas que devem ser evitadas no desenvolvimento de software.
 
-## ANTI-PADRÕES DEMONSTRADOS:
+## 🚫 Anti-Padrões Demonstrados
 
-1. GOD CLASS: ECommerceSystem faz tudo (vendas, usuários, relatórios, BD)
-2. LONG METHOD: processarPedido() muito longo e complexo
-3. MAGIC NUMBERS/STRINGS: valores hardcoded (0.9, "PREMIUM", etc.)
-4. ANEMIC DOMAIN MODEL: Classes de domínio sem comportamento
-5. SINGLETON MAL FEITO: Não thread-safe
-6. TIGHT COUPLING: Acesso direto ao banco de dados
-7. MIXED CONCERNS: UI (System.out) misturado com lógica
-8. POOR ERROR HANDLING: printStackTrace() inadequado
-9. VIOLATION OF SRP: Uma classe com múltiplas responsabilidades
-10. HARD TO TEST: Código acoplado e sem injeção de dependências
+### 1. God Class (Classe Deus)
+- **Onde**: Classe `ECommerceSystem`
+- **Problema**: Uma única classe controlando todas as operações do sistema
+- **Impacto**: Baixa coesão, alta complexidade, difícil manutenção
 
----
+### 2. Long Method (Método Longo)
+- **Onde**: Método `processarPedido()`
+- **Problema**: Método realizando muitas operações distintas
+- **Impacto**: Código difícil de entender e modificar
 
-### Como Melhorar o Projeto:
-- Separar responsabilidades em classes específicas
-- Criar camadas (Controller, Service, Repository)  
-- Implementar interfaces para abstrair dependências
-- Usar padrões como Factory, Strategy, Observer
-- Implementar tratamento de erros adequado
+### 3. Magic Numbers/Strings
+- **Onde**: Todo o código
+- **Problema**: Uso de valores literais sem explicação
+- **Exemplo**: `0.9` para desconto, `"PREMIUM"` para categoria
+
+### 4. Anemic Domain Model
+- **Onde**: Classes `Produto`, `Usuario`, `Pedido`
+- **Problema**: Classes de domínio sem comportamento, apenas dados
+- **Impacto**: Regras de negócio espalhadas pelo sistema
+
+### 5. Singleton Mal Implementado
+- **Onde**: `ECommerceSystem`
+- **Problema**: Implementação não thread-safe
+- **Impacto**: Possíveis problemas em ambiente multi-thread
+
+## 🎯 Objetivos de Aprendizado
+- Identificar anti-padrões comuns
+- Entender seus impactos negativos
+- Aprender melhores práticas de design
+
+## ✅ Como Melhorar o Código
+
+### 1. Separação de Responsabilidades
+```java
+// Exemplo de estrutura melhorada
+└── src/
+    ├── controller/
+    ├── service/
+    ├── repository/
+    └── model/
+```
+
+### 2. Boas Práticas
+- Implementar princípios SOLID
+- Usar injeção de dependências
 - Criar testes unitários
+- Aplicar padrões de projeto adequados:
+  - Factory para criação de objetos
+  - Strategy para diferentes formas de pagamento
+  - Repository para acesso a dados
+  - Observer para notificações
+
+## 🛠️ Como Executar
+```bash
+javac *.java
+java Main
+```
